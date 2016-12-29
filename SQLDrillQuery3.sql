@@ -1,0 +1,9 @@
+USE SQLDrill;
+GO
+
+SELECT DISTINCT(br.Name)
+FROM BORROWER br
+LEFT JOIN BOOK_LOANS bl
+ON br.CardNo = bl.CardNo
+WHERE bl.CardNo IS NULL;
+GO
